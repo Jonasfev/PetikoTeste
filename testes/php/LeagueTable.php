@@ -53,17 +53,16 @@ class LeagueTable
 		$this->standings[$player]['score'] += $score;
 	}
 	
-	public function playerRank($rank)
-    {
-        $rank--;
-        //Ordenar a array baseado no score, games_played, index;
+	public function playerRank($rank){
+		$rank--;
+		//Ordenar a array baseado no score, games_played, index;
 		array_multisort(array_column($this->standings, 'score'),  SORT_DESC, array_column($this->standings, 'games_played'), SORT_ASC, array_column($this->standings, 'index'), SORT_ASC, $this->standings);
-                
-        //Criar uma array com o nome de cada jogador de acordo com o rank ordenado acima;
-         $rankTable = array_keys($this->standings);
-      
-        //Retorna o nome do jogador com base no rank informado
-        return $rankTable[$rank];
+
+		//Criar uma array com o nome de cada jogador de acordo com o rank ordenado acima;
+		$rankTable = array_keys($this->standings);
+
+		//Retorna o nome do jogador com base no rank informado
+		return $rankTable[$rank];
 	}
 }
       
