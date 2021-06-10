@@ -40,12 +40,11 @@ https://postmon.com.br/
 
 class CEP
 {
-    public static function getAddressByCep($cep)
-    {
+    public static function getAddressByCep($cep){
 
-		//Definição de url, decodificação do arquivo JSON e retorno do resultado;
+	//Definição de url, decodificação do arquivo JSON e retorno do resultado;
 		
-		$api_url = 'https://api.postmon.com.br/v1/cep/'.$cep;
+	$api_url = 'https://api.postmon.com.br/v1/cep/'.$cep;
         
         $resultado = json_decode(file_get_contents($api_url));
         
