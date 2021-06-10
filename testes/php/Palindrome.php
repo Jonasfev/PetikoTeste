@@ -27,7 +27,7 @@ class Palindrome{
         if(strcmp($word, $revertWord) == 0){
             return true;
         }
-            return false;
+        return false;
     }
 }
 
